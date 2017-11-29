@@ -2,16 +2,17 @@ package com.sunp.learm.singleton;
 
 public class Test {
 	public static void main(String[] args) {
-		Singleton s = new Singleton();
-		Singleton s2 = new Singleton();
+		Singleton s = new Singleton().getInstance();
+		Singleton s2 = new Singleton().getInstance();
+		System.out.println(s.equals(s2));
 		//System.out.println("s.i:"+s.getI()+"   s2.i:"+s2.getI());
 		LazySingleton lsl = new LazySingleton();
 		LazySingleton lsl2 = new LazySingleton();
 		System.out.println(lsl.equals(lsl2));
-	
-		clazz c = new clazz();
-		clazz c2 = new clazz();
-		System.out.println("c:"+c.getI()+"  c2:"+c2.getI());
+		
+//		clazz c = new clazz();
+//		clazz c2 = new clazz();
+//		System.out.println("c:"+c.getI()+"  c2:"+c2.getI());
 		
 	}
 }
