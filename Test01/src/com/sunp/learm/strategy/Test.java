@@ -1,4 +1,4 @@
-package com.sunp.learm.packages;
+package com.sunp.learm.strategy;
 
 public class Test {
 	public static void main(String args[]) {
