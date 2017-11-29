@@ -2,7 +2,7 @@ package com.sunp.learm.singleton;
 
 public class LazySingleton {
 	private static LazySingleton instance = null;
-	public LazySingleton() {
+	private LazySingleton() {
 		
 	}
 	

@@ -2,22 +2,11 @@ package com.sunp.learm.singleton;
 
 public class Singleton {
 	private volatile static Singleton instance = null;
-//	private  static double i ;
-//	public Singleton() {
-//		i = Math.random();
-//	}
-//	
-//	
-//	public double getI() {
-//		return i;
-//	}
-//
-//
-//	public void setI(double i) {
-//		this.i = i;
-//	}
 
-
+	private Singleton() {
+		
+	}
+	
 	public static Singleton getInstance() {
 		if(instance == null) {
 			synchronized(Singleton.class) {
