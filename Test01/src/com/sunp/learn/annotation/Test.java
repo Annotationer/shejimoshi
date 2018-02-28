@@ -1,10 +1,11 @@
 package com.sunp.learn.annotation;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 
 public class Test {
 	public static void main(String[] args) throws Exception{
-		String classPath="com.sunpeng.annotation.ApplyFileItem";
+		String classPath="com.sunp.learn.annotation.ApplyFileItem";
 		String property = "extra";
 		System.out.println(new Test().countLength(classPath,property,CChar.class));
 	}
@@ -17,7 +18,7 @@ public class Test {
 	 * @throws Exception 
 	 * 属性不输入计算全部长度
 	 */
-	public int countLength(String classPath, String property,Class annotation ) throws Exception{
+	public int countLength(String classPath, String property,Class<CChar> annotation ) throws Exception{
 		if(classPath.trim().length() == 0 || classPath == null)
 			throw new Exception("类路径不能为空！");
 		if(annotation == null)

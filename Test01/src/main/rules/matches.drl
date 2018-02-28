@@ -1,0 +1,11 @@
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+ 
+rule "matches"
+    when
+        $customer:Customer(name matches "¿Ó.");
+    then
+        System.out.println( $customer.getName());
+end

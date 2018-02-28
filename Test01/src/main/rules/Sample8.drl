@@ -1,0 +1,14 @@
+
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+ 
+rule "rule1"
+	date-effective "2010-09-25"
+	when 
+		eval(true);
+	then
+		System.out.println("rule1 is execution!");
+end
+

@@ -1,0 +1,29 @@
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+ 
+query "query fact count"
+	Customer();
+end
+
+
+rule "rule1"
+	salience 2
+    when
+       $customer:Customer(name=="张三");
+    then
+    	System.out.println("modify before customer Name：" + $customer.getName() +";  age:"+$customer.getAge() +" ; id:" +$customer.getId());
+    	modify ($customer){
+    		setId(222),setAge(23)
+    	}
+end
+
+rule "rule2"
+	salience 1
+	when 
+		$customer:Customer(name=="张三");
+	then
+		System.out.println("modify after customer name" + $customer.getName() +";age:"+$customer.getAge() +",  id: " + $customer.getId());
+end
+

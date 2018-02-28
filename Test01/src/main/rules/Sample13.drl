@@ -1,0 +1,28 @@
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+
+declare Address
+	city : String 
+	addressName : String
+end
+
+rule "rule1"
+	salience 2
+	when 
+		eval(true)
+	then
+		Address add = new Address();
+		add.setCity("sdasda");
+		add.setAddressName("5666");
+		insert(add);
+end
+
+
+rule "rule2"
+	salience 1
+	when 
+		$add:Address()
+	then
+		System.out.println($add.getCity());
+end

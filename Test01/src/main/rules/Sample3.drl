@@ -1,0 +1,35 @@
+
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+ 
+query "query fact count"
+	Customer();
+end
+
+
+rule "rule1"
+	salience 2
+    when
+        eval(true);
+    then
+        Customer cus = new Customer();
+        cus.setName ("¿Ó2");
+        cus.setAge(1);
+        ##insert(cus);
+        insertLogical(cus);
+        System.out.println("rule1---");
+end
+
+rule "rule2"
+	salience 3
+	no-loop true
+    when
+       $customer:Customer(name == "¿Ó2" && age <10);
+    then
+    	$customer.setAge($customer.getAge()+1);
+    	update ($customer);
+        System.out.println("rule2--name:" + $customer.getName() + "   age:" + $customer.getAge());
+end
+

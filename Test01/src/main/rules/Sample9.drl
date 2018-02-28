@@ -1,0 +1,16 @@
+
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+ 
+
+
+rule "rule2"
+	date-expires "2019-09-25"
+	when 
+		eval(true);
+	then
+		System.out.println("rule2 is execution!");
+		System.out.println("dialect:" + drools.getRule().getDialect());
+end

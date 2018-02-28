@@ -1,0 +1,27 @@
+
+
+
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+ 
+
+
+rule "rule1"
+	agenda-group "001"
+	auto-focus true
+	when 
+		eval(true)
+	then
+		System.out.println("rule1");
+end
+
+rule "rule2"
+	agenda-group "002"
+	auto-focus true
+	when
+		eval(true)
+	then
+		System.out.println("rule2");
+end

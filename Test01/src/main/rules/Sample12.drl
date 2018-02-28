@@ -1,0 +1,53 @@
+
+
+
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+import function com.sample.RuleTools.printInfo;
+
+/*
+function void setOrder(Customer customer,int orderSize){
+	List list = new ArrayList();
+	for(int i=0;i<orderSize;i++){
+		Order order = new Order();
+		list.add(order);
+	}
+	customer.setOrder(list);
+
+}
+
+
+rule "rule1"
+	when 
+		$customer:Customer();
+	then
+		setOrder($customer,5);
+		System.out.println("rule 1 customer has order size "+ $customer.getOrder().size());
+end
+
+
+rule "rule2"
+	when
+		$customer:Customer();
+	then 
+		setOrder($customer,10);
+		System.out.println("rule 2 customer has order size "+
+			$customer.getOrder.size());
+end
+*/
+
+rule "rule3"
+	when 
+		eval(true)
+	then 
+		printInfo("sdas");
+end
+
+
+query "testQuery"
+	cust1:Customer(age>30)
+end
+		
+

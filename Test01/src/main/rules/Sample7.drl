@@ -1,0 +1,27 @@
+
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+ 
+query "query fact count"
+	Customer();
+end
+
+
+rule "rule1"
+	salience 1
+    when
+       eval(true)
+    then
+    	System.out.println("rule1");
+end
+
+rule "rule2"
+	salience 2
+	when 
+		eval(true)
+	then
+		System.out.println("rule2");
+end
+

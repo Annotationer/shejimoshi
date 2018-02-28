@@ -1,0 +1,26 @@
+
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import java.util.List;
+ 
+rule "rule1"
+	salience 1
+    when
+        eval(true);
+    then
+        Customer cus = new Customer();
+        cus.setName ("¿Ó2");
+        ##insert(cus);
+        insertLogical(cus);
+        System.out.println("rule1---");
+end
+
+rule "rule2"
+	salience 3
+    when
+       $customer:Customer(name == "¿Ó2");
+    then
+        System.out.println("rule2--" + $customer.getName());
+end
+
